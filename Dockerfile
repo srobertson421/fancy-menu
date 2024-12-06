@@ -10,7 +10,7 @@ RUN apk add --no-cache \
 ADD https://github.com/pocketbase/pocketbase/releases/download/v${PB_VERSION}/pocketbase_${PB_VERSION}_linux_amd64.zip /tmp/pb.zip
 RUN unzip /tmp/pb.zip -d /pb/
 
-RUN cp -r ./pb_public /pb/.
+CMD ["cp", "-r", "./pb_public", "/pb/."]
 
 EXPOSE 8080
 
