@@ -7,11 +7,10 @@ RUN apk add --no-cache \
     ca-certificates
 
 # download and unzip PocketBase
-# ADD https://github.com/pocketbase/pocketbase/releases/download/v${PB_VERSION}/pocketbase_${PB_VERSION}_linux_amd64.zip /tmp/pb.zip
-# RUN unzip /tmp/pb.zip -d /pb/
+ADD https://github.com/pocketbase/pocketbase/releases/download/v${PB_VERSION}/pocketbase_${PB_VERSION}_linux_amd64.zip /tmp/pb.zip
+RUN unzip /tmp/pb.zip -d /pb/
 
-RUN cp -r pb_public /pb/.
-RUN cp ./pocketbase /pb/.
+RUN cp -r ./pb_public /pb/.
 
 EXPOSE 8080
 
